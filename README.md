@@ -11,6 +11,8 @@ Shazam is being built to be an asynchronous, concurrent, and rapid Networking Li
 * Handle request building
 * Handle response assessment
 
+### Features
+
 ### Engineer(s)
 
 * Medi Assumani - iOS Engineer
