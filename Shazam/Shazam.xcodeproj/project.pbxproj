@@ -10,6 +10,7 @@
 		B848DAEE223D63D600C774C7 /* Shazam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B848DAE4223D63D600C774C7 /* Shazam.framework */; };
 		B848DAF3223D63D600C774C7 /* ShazamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B848DAF2223D63D600C774C7 /* ShazamTests.swift */; };
 		B848DAF5223D63D600C774C7 /* Shazam.h in Headers */ = {isa = PBXBuildFile; fileRef = B848DAE7223D63D600C774C7 /* Shazam.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B848DB03223D6F0500C774C7 /* Shazam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B848DB02223D6F0500C774C7 /* Shazam.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		B848DAED223D63D600C774C7 /* ShazamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShazamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B848DAF2223D63D600C774C7 /* ShazamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamTests.swift; sourceTree = "<group>"; };
 		B848DAF4223D63D600C774C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B848DB02223D6F0500C774C7 /* Shazam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shazam.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,9 @@
 		B848DAE6223D63D600C774C7 /* Shazam */ = {
 			isa = PBXGroup;
 			children = (
+				B848DB01223D6EEE00C774C7 /* Source */,
+				B848DB00223D6ED300C774C7 /* Example */,
+				B848DAFE223D6EB400C774C7 /* Documentation */,
 				B848DAE7223D63D600C774C7 /* Shazam.h */,
 				B848DAE8223D63D600C774C7 /* Info.plist */,
 			);
@@ -84,6 +89,28 @@
 				B848DAF4223D63D600C774C7 /* Info.plist */,
 			);
 			path = ShazamTests;
+			sourceTree = "<group>";
+		};
+		B848DAFE223D6EB400C774C7 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
+		B848DB00223D6ED300C774C7 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		B848DB01223D6EEE00C774C7 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B848DB02223D6F0500C774C7 /* Shazam.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +175,7 @@
 				TargetAttributes = {
 					B848DAE3223D63D600C774C7 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					B848DAEC223D63D600C774C7 = {
 						CreatedOnToolsVersion = 10.1;
@@ -194,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B848DB03223D6F0500C774C7 /* Shazam.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +370,7 @@
 		B848DAF9223D63D600C774C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mediassumani.Shazam;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +397,7 @@
 		B848DAFA223D63D600C774C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +423,7 @@
 		B848DAFC223D63D600C774C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 966X5T4Q98;
 				INFOPLIST_FILE = ShazamTests/Info.plist;
@@ -409,6 +442,7 @@
 		B848DAFD223D63D600C774C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 966X5T4Q98;
 				INFOPLIST_FILE = ShazamTests/Info.plist;
