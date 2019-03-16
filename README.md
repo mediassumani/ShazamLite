@@ -19,6 +19,6 @@ Shazam is being built to be an asynchronous, concurrent, and rapid Networking Li
 ### Built With
 
 
-### acknowledgements
+### Acknowledgements
 
 
