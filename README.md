@@ -2,6 +2,7 @@
 
 ### Overview
 Shazam is being built to be an asynchronous, concurrent, and rapid Networking Library built in Swift for iOS & MacOS. Its main goal is to provide an extra level of abstraction that <a href="https://github.com/Alamofire/Alamofire">Alamofire</a> and <a href="https://github.com/Moya/Moya">Moya</a> are missing.
+
 ### Goal
 
 * Absract complex URLSession functionalities for beginner developers.
@@ -13,14 +14,14 @@ Shazam is being built to be an asynchronous, concurrent, and rapid Networking Li
 
 ### Features
 
-### Engineer(s)
+### Requirements
 
-* Medi Assumani - iOS Engineer
+### Installation
 
+### Quick start
+
+### Author
 
 ### Built With
 
-
-### Acknowledgements
-
-
+### License
