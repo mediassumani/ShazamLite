@@ -3,7 +3,7 @@
 ### Overview
 Shazam is an asynchronous, concurrent, and rapid Networking Library built in Swift for iOS & MacOS.
 
-### Goal
+### Features
 
 * Absract complex URLSession functionalities for beginner developers.
 * Absract Model Encoding and Decoding from developers.
@@ -12,11 +12,16 @@ Shazam is an asynchronous, concurrent, and rapid Networking Library built in Swi
 * Handle request building
 * Handle response assessment
 
-### Features
-
 ### Requirements
 
 ### Installation
+
+#### Cocoapods
+
+#### Carthage
+
+
+#### Swift Package Manager
 
 ### Quick start
 
