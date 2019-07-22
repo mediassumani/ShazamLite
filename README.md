@@ -27,6 +27,8 @@ Shazam is an asynchronous, concurrent, and rapid Networking Library built in Swi
 
 ### Author
 
+* Medi Assumani - Initial Work
+
 ### Built With
 
 ### License
