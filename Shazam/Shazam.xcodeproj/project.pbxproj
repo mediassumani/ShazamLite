@@ -11,6 +11,7 @@
 		B848DAF3223D63D600C774C7 /* ShazamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B848DAF2223D63D600C774C7 /* ShazamTests.swift */; };
 		B848DAF5223D63D600C774C7 /* Shazam.h in Headers */ = {isa = PBXBuildFile; fileRef = B848DAE7223D63D600C774C7 /* Shazam.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B848DB03223D6F0500C774C7 /* Shazam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B848DB02223D6F0500C774C7 /* Shazam.swift */; };
+		B88558A422E1156800ABD67A /* Shazam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B848DB02223D6F0500C774C7 /* Shazam.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B848DAF3223D63D600C774C7 /* ShazamTests.swift in Sources */,
+				B88558A422E1156800ABD67A /* Shazam.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
