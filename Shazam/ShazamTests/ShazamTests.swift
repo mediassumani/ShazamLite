@@ -9,28 +9,80 @@
 import XCTest
 @testable import Shazam
 
+
+struct Todo: Codable {
+    
+    var userId: Int?
+    var title: String?
+    var completed: Bool?
+}
+
 class ShazamTests: XCTestCase {
 
+    var downloader: Shazam!
+    var todo: Todo!
+    
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        let downloader = Shazam(withUrlString: <#T##String#>)
+        downloader = Shazam(withUrlString: "https://jsonplaceholder.typicode.com/posts/1")
+        todo = Todo(userId: 1, title: "Get Food from work", completed: true)
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    /// Test that we can decode a JSON object with Dictionary
+    func testGetWithouDictJSON() {
+        
+        let getDataExpectation = XCTestExpectation(description: "tests the get method of Shazam class")
+        
+        downloader.get(parameters: nil, headers: nil) { (result: Result<[Todo]?, Error>) in
+            
+            switch result{
+            case let .success(data):
+                getDataExpectation.fulfill()
+                
+            case .failure(_):
+                print("failed")
+            }
+            
+            self.wait(for: [getDataExpectation], timeout: 10.0)
         }
     }
-
+    
+    
+    func testGetWithArrayJSON() {
+     
+//        let getDataExpectation = XCTestExpectation(description: "tests the get method of Shazam class")
+//        downloader.urlString =
+//        downloader.get(parameters: nil, headers: nil) { (result: Result<[Todo]?, Error>) in
+//
+//            switch result{
+//            case let .success(data):
+//                // Make sure that the data is of type Todo
+//                XCTAssertTrue(type(of: data) == Todo.self)
+//                getDataExpectation.fulfill()
+//
+//            case .failure(_):
+//                print("failed")
+//            }
+//        }
+    }
+    
+    func testSetWithPost() {
+    
+    }
+    
+    func testSetWithPut() {
+        
+    }
+    
+    func testSetWithDelete() {
+        
+    }
+    
+    
+    override func tearDown() {
+        
+    }
+    
+    
 }

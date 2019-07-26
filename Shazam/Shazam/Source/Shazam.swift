@@ -78,7 +78,7 @@ public protocol DownloadDelegate {
 }
 
 // - MARK: CLASS
-
+@available(iOS 12.0, *)
 class Shazam: DownloadDelegate {
     
     // Keeps track of the download progress throughout the network call
