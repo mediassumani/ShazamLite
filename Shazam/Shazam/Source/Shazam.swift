@@ -23,101 +23,18 @@
 
 import Foundation
 
+
+// - MARK: Typealias
+
 public typealias HTTPParameters = [String: Any]?
 public typealias HTTPHeaders = [String: Any]?
 
 
-public protocol DownloadDelegate {
-    
-    var progress: DownloadProgress { get }
-    
-    func get<T> (parameters: HTTPParameters?, headers: HTTPHeaders?, completion: @escaping(Result<T?, Error>) -> ()) where T: Decodable
-    
-    func set (endpoint: String, parameters: HTTPParameters?, headers: HTTPHeaders?, method: HTTPMethod, body: Data?, completion: @escaping(Result<Bool, Error>) -> ())
-}
-
-class Shazam: DownloadDelegate {
-    
-    var progress: DownloadProgress = .idle
-    var urlString: String
-    
-    init(withUrlString url: String) {
-        self.urlString = url
-    }
-    
-    
-    func get<T>(parameters: HTTPParameters?, headers: HTTPHeaders?, completion: @escaping (Result<T?, Error>) -> ()) where T : Decodable {
-        
-        do {
-            let request = try HTTPNetworkRequest.configureHTTPRequest(path: urlString, params: parameters, headers: headers, body: nil, method: .get, progress: &progress)
-            
-            URLSession.shared.dataTask(with: request) { (data, response, err) in
-                
-                self.progress = .downloading
-                guard let unwrappedResponse = response as? HTTPURLResponse, let unwrappedData = data else { return }
-                
-                let responseResult = HTTPNetworkResponse.handleNetworkResponse(for: unwrappedResponse)
-                
-                switch responseResult{
-                    
-                    // The Response Had a 200 status code
-                case .success:
-                    do {
-                        // Decode and return the data Asynchroneously
-                        let result = try JSONDecoder().decode(T.self, from: unwrappedData)
-                        self.progress = .completed
-                        completion(.success(result))
-
-                    } catch {
-                        completion(.failure(HTTPNetworkError.decodingFailed))
-                        self.progress = .failed
-                    }
-                    // The response had a failure status coe
-                case let .failure(error):
-                    
-                    self.progress = .failed
-                    completion(.failure(error))
-                }
-            }.resume()
-        } catch {
-            // Error happened while building the request object
-            progress = .failed
-            completion(.failure(error))
-        }
-    }
-    
-    
-    func set(endpoint: String, parameters: HTTPParameters?, headers: HTTPHeaders?, method: HTTPMethod, body: Data?, completion: @escaping (Result<Bool, Error>) -> ()) {
-        
-        do {
-            
-            let request = try HTTPNetworkRequest.configureHTTPRequest(path: endpoint, params: parameters, headers: headers, body: body, method: method, progress: &progress)
-            
-            URLSession.shared.dataTask(with: request) { (data, res, err) in
-                
-                guard let unwrappedResponse = res as? HTTPURLResponse else { return }
-                
-                if (unwrappedResponse.statusCode >= 200 && unwrappedResponse.statusCode <= 299) {
-                    completion(.success(true))
-                } else {
-                    completion(.failure(HTTPNetworkError.FragmentResponse))
-                }
-                }.resume()
-            
-        } catch {
-            completion(.failure(HTTPNetworkError.badRequest))
-        }
-    }
-}
-
+// - MARK: Enums
 
 public enum DownloadProgress {
     
-    case idle
-    case fired
-    case downloading
-    case completed
-    case failed
+    case idle, fired, downloading, completed, failed
 }
 
 public enum HTTPMethod: String {
@@ -148,6 +65,97 @@ public enum HTTPNetworkError: String, Error {
     case serverSideError = "Error Found : Server Side Error"
 }
 
+// - MARK: Protocols
+
+
+public protocol DownloadDelegate {
+    
+    var progress: DownloadProgress { get }
+    
+    func get<T> (parameters: HTTPParameters?, headers: HTTPHeaders?, completion: @escaping(Result<T?, Error>) -> ()) where T: Decodable
+    
+    func set (parameters: HTTPParameters?, headers: HTTPHeaders?, method: HTTPMethod, body: Data?, completion: @escaping(Result<Bool, Error>) -> ())
+}
+
+// - MARK: CLASS
+
+class Shazam: DownloadDelegate {
+    
+    // Keeps track of the download progress throughout the network call
+    var progress: DownloadProgress = .idle
+    
+    // The endpoint/route/url to make the request to
+    var urlString: String
+    
+    init(withUrlString url: String) {
+        self.urlString = url
+    }
+    
+    
+    /// Use to make `GET` requests to *urlString* with optional *headers* and *parameters*
+    func get<T>(parameters: HTTPParameters?, headers: HTTPHeaders?, completion: @escaping (Result<T?, Error>) -> ()) where T : Decodable {
+        
+        progress = .fired
+        do {
+            let request = try HTTPNetworkRequest.configureHTTPRequest(path: urlString, params: parameters, headers: headers, body: nil, method: .get, progress: &progress)
+            
+            URLSession.shared.dataTask(with: request) { (data, response, err) in
+                
+                self.progress = .downloading
+                guard let unwrappedResponse = response as? HTTPURLResponse, let unwrappedData = data else { return }
+                
+                let responseResult = HTTPNetworkResponse.handleNetworkResponse(for: unwrappedResponse)
+                
+                switch responseResult{
+                case .success:
+                    do {
+                        let result = try JSONDecoder().decode(T.self, from: unwrappedData)
+                        self.progress = .completed
+                        completion(.success(result))
+                        
+                    } catch {
+                        completion(.failure(HTTPNetworkError.decodingFailed))
+                        self.progress = .failed
+                    }
+                case let .failure(error):
+                    
+                    self.progress = .failed
+                    completion(.failure(error))
+                }
+                }.resume()
+        } catch {
+            progress = .failed
+            completion(.failure(error))
+        }
+    }
+    
+    /// Use to make `POST`, `PUT`, `PATCH`, `DELETE` requests
+    func set(parameters: HTTPParameters?, headers: HTTPHeaders?, method: HTTPMethod, body: Data?, completion: @escaping (Result<Bool, Error>) -> ()) {
+        
+        progress = .fired
+        do {
+            
+            let request = try HTTPNetworkRequest.configureHTTPRequest(path: urlString, params: parameters, headers: headers, body: body, method: method, progress: &progress)
+            
+            URLSession.shared.dataTask(with: request) { (data, res, err) in
+                
+                guard let unwrappedResponse = res as? HTTPURLResponse else { return }
+                
+                if (unwrappedResponse.statusCode >= 200 && unwrappedResponse.statusCode <= 299) {
+                    completion(.success(true))
+                } else {
+                    completion(.failure(HTTPNetworkError.FragmentResponse))
+                }
+                
+            }.resume()
+        } catch {
+            completion(.failure(HTTPNetworkError.badRequest))
+        }
+    }
+}
+
+
+// - MARK: STRUCT
 
 private struct URLEncoder {
     
@@ -181,7 +189,8 @@ private struct URLEncoder {
     }
 }
 
-struct HTTPNetworkResponse {
+
+private struct HTTPNetworkResponse {
     
     /// Properly checks and handles the status code of the response
     static func handleNetworkResponse(for response: HTTPURLResponse?) -> Result<String, Error>{
@@ -221,7 +230,6 @@ private struct HTTPNetworkRequest {
                                               headers: HTTPHeaders?,
                                               request: inout URLRequest,
                                               progress: inout DownloadProgress) throws {
-        
         do {
             
             if let headers = headers, let parameters = parameters {

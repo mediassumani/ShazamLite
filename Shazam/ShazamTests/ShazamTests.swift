@@ -13,6 +13,8 @@ class ShazamTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        let downloader = Shazam(withUrlString: <#T##String#>)
     }
 
     override func tearDown() {
