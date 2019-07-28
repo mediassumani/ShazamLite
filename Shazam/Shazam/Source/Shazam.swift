@@ -23,7 +23,6 @@
 
 import Foundation
 
-
 // - MARK: Typealias
 
 public typealias HTTPParameters = [String: Any]?
@@ -67,7 +66,6 @@ public enum HTTPNetworkError: String, Error {
 
 // - MARK: Protocols
 
-
 public protocol DownloadDelegate {
     
     var progress: DownloadProgress { get }
@@ -78,22 +76,23 @@ public protocol DownloadDelegate {
 }
 
 // - MARK: CLASS
+
 @available(iOS 12.0, *)
-class Shazam: DownloadDelegate {
+public class Shazam: DownloadDelegate {
     
     // Keeps track of the download progress throughout the network call
-    var progress: DownloadProgress = .idle
+    public var progress: DownloadProgress = .idle
     
     // The endpoint/route/url to make the request to
-    var urlString: String
+    public var urlString: String
     
-    init(withUrlString url: String) {
+    public init(withUrlString url: String) {
         self.urlString = url
     }
     
     
     /// Use to make `GET` requests to *urlString* with optional *headers* and *parameters*
-    func get<T>(parameters: HTTPParameters?, headers: HTTPHeaders?, completion: @escaping (Result<T?, Error>) -> ()) where T : Decodable {
+    public func get<T>(parameters: HTTPParameters?, headers: HTTPHeaders?, completion: @escaping (Result<T?, Error>) -> ()) where T : Decodable {
         
         progress = .fired
         do {
@@ -130,7 +129,7 @@ class Shazam: DownloadDelegate {
     }
     
     /// Use to make `POST`, `PUT`, `PATCH`, `DELETE` requests
-    func set(parameters: HTTPParameters?, headers: HTTPHeaders?, method: HTTPMethod, body: Data?, completion: @escaping (Result<Bool, Error>) -> ()) {
+    public func set(parameters: HTTPParameters?, headers: HTTPHeaders?, method: HTTPMethod, body: Data?, completion: @escaping (Result<Bool, Error>) -> ()) {
         
         progress = .fired
         do {
@@ -147,7 +146,7 @@ class Shazam: DownloadDelegate {
                     completion(.failure(HTTPNetworkError.FragmentResponse))
                 }
                 
-            }.resume()
+                }.resume()
         } catch {
             completion(.failure(HTTPNetworkError.badRequest))
         }
@@ -157,10 +156,10 @@ class Shazam: DownloadDelegate {
 
 // - MARK: STRUCT
 
-private struct URLEncoder {
+public struct URLEncoder {
     
     /// Encode and set the parameters of a url request
-    static func encodeParameters(for urlRequest: inout URLRequest, with parameters: HTTPParameters) throws {
+    public static func encodeParameters(for urlRequest: inout URLRequest, with parameters: HTTPParameters) throws {
         if parameters == nil { return }
         guard let url = urlRequest.url, let unwrappedParameters = parameters else { throw HTTPNetworkError.missingURL }
         
@@ -178,7 +177,7 @@ private struct URLEncoder {
     }
     
     /// Set the http headers of the request, e.g: Auth Tokens
-    static func setHeaders(for urlRequest: inout URLRequest, with headers: HTTPHeaders) throws {
+    public static func setHeaders(for urlRequest: inout URLRequest, with headers: HTTPHeaders) throws {
         
         if headers == nil { return }
         
@@ -190,10 +189,10 @@ private struct URLEncoder {
 }
 
 
-private struct HTTPNetworkResponse {
+public struct HTTPNetworkResponse {
     
     /// Properly checks and handles the status code of the response
-    static func handleNetworkResponse(for response: HTTPURLResponse?) -> Result<String, Error>{
+    public static func handleNetworkResponse(for response: HTTPURLResponse?) -> Result<String, Error>{
         
         guard let res = response else { return Result.failure(HTTPNetworkError.UnwrappingError)}
         
@@ -209,10 +208,10 @@ private struct HTTPNetworkResponse {
 }
 
 
-private struct HTTPNetworkRequest {
+public struct HTTPNetworkRequest {
     
     /// Set the body, method, headers, and paramaters of the request
-    static func configureHTTPRequest(path: String, params: HTTPParameters?, headers: HTTPHeaders?, body: Data?, method: HTTPMethod, progress: inout DownloadProgress) throws -> URLRequest {
+    public static func configureHTTPRequest(path: String, params: HTTPParameters?, headers: HTTPHeaders?, body: Data?, method: HTTPMethod, progress: inout DownloadProgress) throws -> URLRequest {
         
         guard let url = URL(string: path) else { throw HTTPNetworkError.missingURL }
         
@@ -226,10 +225,10 @@ private struct HTTPNetworkRequest {
     }
     
     /// Configure the request parameters and headers before the API Call
-    static func configureParametersAndHeaders(parameters: HTTPParameters?,
-                                              headers: HTTPHeaders?,
-                                              request: inout URLRequest,
-                                              progress: inout DownloadProgress) throws {
+    public static func configureParametersAndHeaders(parameters: HTTPParameters?,
+                                                     headers: HTTPHeaders?,
+                                                     request: inout URLRequest,
+                                                     progress: inout DownloadProgress) throws {
         do {
             
             if let headers = headers, let parameters = parameters {
