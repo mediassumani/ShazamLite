@@ -30,41 +30,63 @@ class ShazamTests: XCTestCase {
     }
 
     /// Test that we can decode a JSON object with Dictionary
-    func testGetWithouDictJSON() {
+    func testGetWithDictJSON() {
         
         let getDataExpectation = XCTestExpectation(description: "tests the get method of Shazam class")
         
-        downloader.get(parameters: nil, headers: nil) { (result: Result<[Todo]?, Error>) in
+        XCTAssertNotNil(downloader)
+        XCTAssertNotNil(todo)
+        
+        downloader.get(parameters: nil, headers: nil) { (result: Result<Todo?, Error>) in
+            
+            XCTAssertNotNil(result)
             
             switch result{
             case let .success(data):
-                getDataExpectation.fulfill()
+
+                XCTAssertNotNil(data)
+                XCTAssertTrue(type(of: data) == Todo?.self)
+                XCTAssertTrue(type(of: data?.completed) == Bool?.self)
+                XCTAssertTrue(type(of: data?.title) ==  String?.self)
+                XCTAssertTrue(type(of: data?.userId) ==  Int?.self)
                 
-            case .failure(_):
-                print("failed")
+            case let .failure(error):
+                XCTAssertNil(error)
             }
             
-            self.wait(for: [getDataExpectation], timeout: 10.0)
+            getDataExpectation.fulfill()
         }
+        wait(for: [getDataExpectation], timeout: 5)
     }
     
     
     func testGetWithArrayJSON() {
      
-//        let getDataExpectation = XCTestExpectation(description: "tests the get method of Shazam class")
-//        downloader.urlString =
-//        downloader.get(parameters: nil, headers: nil) { (result: Result<[Todo]?, Error>) in
-//
-//            switch result{
-//            case let .success(data):
-//                // Make sure that the data is of type Todo
-//                XCTAssertTrue(type(of: data) == Todo.self)
-//                getDataExpectation.fulfill()
-//
-//            case .failure(_):
-//                print("failed")
-//            }
-//        }
+        let getDataExpectation = XCTestExpectation(description: "tests the get method of Shazam class")
+        
+        XCTAssertNotNil(downloader)
+        XCTAssertNotNil(todo)
+        downloader.urlString = "https://jsonplaceholder.typicode.com/posts"
+        
+        downloader.get(parameters: nil, headers: nil) { (result: Result<[Todo]?, Error>) in
+            
+            XCTAssertNotNil(result)
+            
+            switch result{
+            case let .success(data):
+                
+                XCTAssertNotNil(data)
+                XCTAssertTrue(type(of: data) == [Todo]?.self)
+                XCTAssertTrue(data!.count > 1)
+                
+            case let .failure(error):
+                
+                XCTAssertNil(error)
+            }
+            
+            getDataExpectation.fulfill()
+        }
+        wait(for: [getDataExpectation], timeout: 5)
     }
     
     func testSetWithPost() {
