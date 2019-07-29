@@ -16,13 +16,6 @@ Shazam is an asynchronous, concurrent, and rapid Networking Library built in Swi
 
 ### Installation
 
-#### Cocoapods
-
-#### Carthage
-
-
-#### Swift Package Manager
-
 ### Quick start
 
 ### Author
