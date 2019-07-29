@@ -10,5 +10,5 @@ Pod::Spec.new do |spec|
   spec.author = { "Medi Assumani" => "mediassumani49@gmail.com" }
   spec.platform     = :ios, "10.0"
   spec.source       = { :git => "https://github.com/MediBoss/Shazam.git", :tag => "1.0.0" }
-  spec.source_files  = "Shazam"
+  spec.source_files  = "Shazam/**/*.swift"
 end
