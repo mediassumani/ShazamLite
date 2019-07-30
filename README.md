@@ -1,16 +1,17 @@
 # ShazamLite
 
 ### Overview
-ShazamLite is an asynchronous, concurrent, and rapid Networking Library built in Swift for iOS & MacOS.
+ShazamLite is an asynchronous, concurrent, and rapid Networking Library built in Swift for iOS.
 
-### Features
+### Why use ShazamLite?
 
-* Absract complex URLSession functionalities for beginner developers.
-* Absract Model Encoding and Decoding from developers.
-* Provide support for all HTTP Request types(GET, POST, PUT, DELETE).
-* Handle all types of possible HTTP errors.
-* Handle request building
-* Handle response assessment
+* Absract complex URLSession functionalities from developers.
+* Configure model Encoding and Decoding from developers.
+* Provide support for all HTTP Request types (GET, POST, PUT, PATCH, DELETE).
+* Graceful handle of common HTTP errors.
+* Dynamic and custom construction of request.
+* Custom handle of server responses.
+* Less code and focus on networking layer, more focus on UI work.
 
 ### Requirements
 
@@ -25,7 +26,12 @@ ShazamLite is an asynchronous, concurrent, and rapid Networking Library built in
 
 ### Quick start
 
-* Your Model - make sure it conforms to the Codable protocole
+NOTE: ShazamLite only has two powerfull methods
+
+  - get : Use this for most requests when getting data from an API. 
+  - set : Use this for when you're sending data to an API.
+  
+* Your Model - make sure it conforms to the Codable protocol.
 
 ```swift
   struct Todo: Codable {
@@ -44,6 +50,7 @@ ShazamLite is an asynchronous, concurrent, and rapid Networking Library built in
 import ShazamLite
 
 var downloader = Shazam(withUrlString: "https://jsonplaceholder.typicode.com/todo/1")
+
 downloader.get(parameters: nil, headers: nil) { (result: Result<Todo?, Error>) in
 
   switch result{
@@ -64,6 +71,7 @@ downloader.get(parameters: nil, headers: nil) { (result: Result<Todo?, Error>) i
 import ShazamLite
 
 var downloader = Shazam(withUrlString: "https://jsonplaceholder.typicode.com/todos/1")
+
 downloader.get(parameters: nil, headers: nil) { (result: Result<[Todo]?, Error>) in
 
   switch result{
@@ -77,7 +85,7 @@ downloader.get(parameters: nil, headers: nil) { (result: Result<[Todo]?, Error>)
 
 ```
 
-* Request for sending data to a server with POST request.
+* Request for sending data to a server with POST method.
 
 ``` Swift
 
