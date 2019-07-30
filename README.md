@@ -51,12 +51,14 @@ ShazamLite is an asynchronous, concurrent, and rapid Networking Library built in
 
 import ShazamLite
 
+// Initialize a Shazam instance with a url/endpoint/route.
 var downloader = Shazam(withUrlString: "https://jsonplaceholder.typicode.com/todo/1")
 
 downloader.get(parameters: nil, headers: nil) { (result: Result<Todo?, Error>) in
 
   switch result{
-      case let .success(data):
+      case let .success(todo):
+        print(todo.title)
         // Your data available!
                 
       case let .failure(error):
@@ -103,6 +105,7 @@ downloader.set(parameters: nil, headers: nil, method: .post, body: encodedBody) 
   switch result{
       case let .success(data):
         // Your data available!
+        
                 
       case let .failure(error):
         // Errors are customed in ShazamLite, print it to see what caused the failure             
