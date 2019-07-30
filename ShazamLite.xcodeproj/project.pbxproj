@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B848DAEE223D63D600C774C7 /* Shazam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B848DAE4223D63D600C774C7 /* Shazam.framework */; };
+		B848DAEE223D63D600C774C7 /* ShazamLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B848DAE4223D63D600C774C7 /* ShazamLite.framework */; };
 		B848DAF3223D63D600C774C7 /* ShazamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B848DAF2223D63D600C774C7 /* ShazamTests.swift */; };
 		B848DAF5223D63D600C774C7 /* Shazam.h in Headers */ = {isa = PBXBuildFile; fileRef = B848DAE7223D63D600C774C7 /* Shazam.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B848DB03223D6F0500C774C7 /* Shazam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B848DB02223D6F0500C774C7 /* Shazam.swift */; };
@@ -25,10 +25,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B848DAE4223D63D600C774C7 /* Shazam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shazam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B848DAE4223D63D600C774C7 /* ShazamLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShazamLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B848DAE7223D63D600C774C7 /* Shazam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shazam.h; sourceTree = "<group>"; };
 		B848DAE8223D63D600C774C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B848DAED223D63D600C774C7 /* ShazamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShazamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B848DAED223D63D600C774C7 /* ShazamLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShazamLiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B848DAF2223D63D600C774C7 /* ShazamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamTests.swift; sourceTree = "<group>"; };
 		B848DAF4223D63D600C774C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B848DB02223D6F0500C774C7 /* Shazam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shazam.swift; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B848DAEE223D63D600C774C7 /* Shazam.framework in Frameworks */,
+				B848DAEE223D63D600C774C7 /* ShazamLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,8 +65,8 @@
 		B848DAE5223D63D600C774C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B848DAE4223D63D600C774C7 /* Shazam.framework */,
-				B848DAED223D63D600C774C7 /* ShazamTests.xctest */,
+				B848DAE4223D63D600C774C7 /* ShazamLite.framework */,
+				B848DAED223D63D600C774C7 /* ShazamLiteTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,9 +128,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B848DAE3223D63D600C774C7 /* Shazam */ = {
+		B848DAE3223D63D600C774C7 /* ShazamLite */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B848DAF8223D63D600C774C7 /* Build configuration list for PBXNativeTarget "Shazam" */;
+			buildConfigurationList = B848DAF8223D63D600C774C7 /* Build configuration list for PBXNativeTarget "ShazamLite" */;
 			buildPhases = (
 				B848DADF223D63D600C774C7 /* Headers */,
 				B848DAE0223D63D600C774C7 /* Sources */,
@@ -141,14 +141,14 @@
 			);
 			dependencies = (
 			);
-			name = Shazam;
+			name = ShazamLite;
 			productName = Shazam;
-			productReference = B848DAE4223D63D600C774C7 /* Shazam.framework */;
+			productReference = B848DAE4223D63D600C774C7 /* ShazamLite.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B848DAEC223D63D600C774C7 /* ShazamTests */ = {
+		B848DAEC223D63D600C774C7 /* ShazamLiteTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B848DAFB223D63D600C774C7 /* Build configuration list for PBXNativeTarget "ShazamTests" */;
+			buildConfigurationList = B848DAFB223D63D600C774C7 /* Build configuration list for PBXNativeTarget "ShazamLiteTests" */;
 			buildPhases = (
 				B848DAE9223D63D600C774C7 /* Sources */,
 				B848DAEA223D63D600C774C7 /* Frameworks */,
@@ -159,9 +159,9 @@
 			dependencies = (
 				B848DAF0223D63D600C774C7 /* PBXTargetDependency */,
 			);
-			name = ShazamTests;
+			name = ShazamLiteTests;
 			productName = ShazamTests;
-			productReference = B848DAED223D63D600C774C7 /* ShazamTests.xctest */;
+			productReference = B848DAED223D63D600C774C7 /* ShazamLiteTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -183,7 +183,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B848DADE223D63D600C774C7 /* Build configuration list for PBXProject "Shazam" */;
+			buildConfigurationList = B848DADE223D63D600C774C7 /* Build configuration list for PBXProject "ShazamLite" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -195,8 +195,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B848DAE3223D63D600C774C7 /* Shazam */,
-				B848DAEC223D63D600C774C7 /* ShazamTests */,
+				B848DAE3223D63D600C774C7 /* ShazamLite */,
+				B848DAEC223D63D600C774C7 /* ShazamLiteTests */,
 			);
 		};
 /* End PBXProject section */
@@ -241,7 +241,7 @@
 /* Begin PBXTargetDependency section */
 		B848DAF0223D63D600C774C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B848DAE3223D63D600C774C7 /* Shazam */;
+			target = B848DAE3223D63D600C774C7 /* ShazamLite */;
 			targetProxy = B848DAEF223D63D600C774C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -465,7 +465,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B848DADE223D63D600C774C7 /* Build configuration list for PBXProject "Shazam" */ = {
+		B848DADE223D63D600C774C7 /* Build configuration list for PBXProject "ShazamLite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B848DAF6223D63D600C774C7 /* Debug */,
@@ -474,7 +474,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B848DAF8223D63D600C774C7 /* Build configuration list for PBXNativeTarget "Shazam" */ = {
+		B848DAF8223D63D600C774C7 /* Build configuration list for PBXNativeTarget "ShazamLite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B848DAF9223D63D600C774C7 /* Debug */,
@@ -483,7 +483,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B848DAFB223D63D600C774C7 /* Build configuration list for PBXNativeTarget "ShazamTests" */ = {
+		B848DAFB223D63D600C774C7 /* Build configuration list for PBXNativeTarget "ShazamLiteTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B848DAFC223D63D600C774C7 /* Debug */,

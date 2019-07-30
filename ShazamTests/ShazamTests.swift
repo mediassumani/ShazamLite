@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Shazam
+@testable import ShazamLite
 
 
 struct Todo: Codable {
@@ -43,6 +43,7 @@ class ShazamTests: XCTestCase {
         XCTAssertNotNil(downloader)
         XCTAssertNotNil(todo)
         
+        downloader.set(parameters: nil, headers: nil, method: .post, body: <#T##Data?#>, completion: <#T##(Result<Bool, Error>) -> ()#>)
         downloader.get(parameters: nil, headers: nil) { (result: Result<Todo?, Error>) in
             
             XCTAssertNotNil(result)
