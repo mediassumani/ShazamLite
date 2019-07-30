@@ -1,7 +1,7 @@
 <p align="center">
   <img width="460" height="250" src="ShazamLite_logo.png">
 </p>
-<p align="center">A dynamically built, yet easy to use Networking Library for iOS.</p>
+<p align="center">  A dynamically built, yet simple to use Networking Library for iOS.</p>
 
 [![HitCount](http://hits.dwyl.io/MediBoss/ShazamLite.svg)](http://hits.dwyl.io/MediBoss/ShazamLite)[![star this repo](http://githubbadges.com/star.svg?user=MediBoss&repo=ShazamLite&style=default)](https://github.com/MediBoss/ShazamLite)
 
@@ -59,6 +59,7 @@ import ShazamLite
 // Initialize a Shazam instance with a url/endpoint/route.
 var downloader = Shazam(withUrlString: "https://jsonplaceholder.typicode.com/todo/1")
 
+// Parameters and headers are optional
 downloader.get(parameters: nil, headers: nil) { (result: Result<Todo?, Error>) in
 
   switch result{
