@@ -26,14 +26,15 @@ ShazamLite is an asynchronous, concurrent, and rapid Networking Library built in
 
 ### Quick start
 
-NOTE: ShazamLite only has two powerfull methods
+<b>NOTE</b>: ShazamLite only has two powerfull methods:
 
-  - get : Use this for most requests when getting data from an API. 
-  - set : Use this for when you're sending data to an API.
+  - * get : Use this for most requests when getting data from an API. 
+  - * set : Use this for when you're sending data to an API.
   
 * Your Model - make sure it conforms to the Codable protocol.
 
 ```swift
+
   struct Todo: Codable {
     
       var userId: Int?
