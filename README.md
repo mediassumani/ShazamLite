@@ -1,9 +1,11 @@
 <p align="center">
-  <img width="460" height="250" src="ShazamLite_logo.png">A dynamically built, yet easy to use Networking Library for iOS.
+  <img width="460" height="250" src="ShazamLite_logo.png">
 </p>
+<p align="center">A dynamically built, yet easy to use Networking Library for iOS.</p>
 
 [![HitCount](http://hits.dwyl.io/MediBoss/ShazamLite.svg)](http://hits.dwyl.io/MediBoss/ShazamLite)[![star this repo](http://githubbadges.com/star.svg?user=MediBoss&repo=ShazamLite&style=default)](https://github.com/MediBoss/ShazamLite)
 [![fork this repo](http://githubbadges.com/fork.svg?user=MediBoss&repo=ShazamLite&style=default)](https://github.com/MediBoss/ShazamLite/fork)
+
 ### Overview
 ShazamLite is an asynchronous, concurrent, and rapid Networking Library built in Swift for iOS.
 
