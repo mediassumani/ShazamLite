@@ -57,13 +57,13 @@ downloader.get(parameters: nil, headers: nil) { (result: Result<Todo?, Error>) i
 
 
 ```
-* Request for decoding  JSON of type dictionary. See example  <a href="https://jsonplaceholder.typicode.com/todos">here</a>.
+* Request for decoding  JSON of type dictionary. See example  <a href="https://jsonplaceholder.typicode.com/todos/1">here</a>.
 
 ``` Swift
 
 import ShazamLite
 
-var downloader = Shazam(withUrlString: "https://jsonplaceholder.typicode.com/todos")
+var downloader = Shazam(withUrlString: "https://jsonplaceholder.typicode.com/todos/1")
 downloader.get(parameters: nil, headers: nil) { (result: Result<[Todo]?, Error>) in
 
   switch result{
