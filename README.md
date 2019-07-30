@@ -25,7 +25,17 @@ ShazamLite is an asynchronous, concurrent, and rapid Networking Library built in
 
 ### Quick start
 
-* Your Model
+* Your Model - make sure it conforms to the Codable protocole
+
+```swift
+  struct Todo: Codable {
+    
+      var userId: Int?
+      var title: String?
+      var completed: Bool?
+  }
+
+```
 
 * Your View Controller
 ``` Swift
