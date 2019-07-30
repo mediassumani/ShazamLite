@@ -79,7 +79,7 @@ downloader.get(parameters: nil, headers: nil) { (result: Result<Todo?, Error>) i
 
 import ShazamLite
 
-var downloader = Shazam(withUrlString: "https://jsonplaceholder.typicode.com/todos/1")
+var downloader = Shazam(withUrlString: "https://jsonplaceholder.typicode.com/todos")
 
 downloader.get(parameters: nil, headers: nil) { (result: Result<[Todo]?, Error>) in
 
