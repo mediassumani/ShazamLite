@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="460" height="300" src="ShazamLite_logo.png">
+  <img width="460" height="250" src="ShazamLite_logo.png">
 </p>
 
 ### Overview
