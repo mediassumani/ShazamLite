@@ -110,9 +110,9 @@ downloader.set(parameters: nil, headers: nil, method: .post, body: encodedBody) 
 
 ```
 
-### Author
+### Developer
 
-* Medi Assumani - Initial Work
+* <a href="https://github.com/MediBoss">Medi Assumani</a> - Initial Work
 
 ### Built With
 
