@@ -25,6 +25,27 @@ ShazamLite is an asynchronous, concurrent, and rapid Networking Library built in
 
 ### Quick start
 
+* Your Model
+
+* Your View Controller
+``` Swift
+
+import ShazamLite
+
+var downloader = Shazam(withUrlString: "https://jsonplaceholder.typicode.com/posts/1")
+downloader.getparameters: nil, headers: nil) { (result: Result<Todo?, Error>) in
+
+  switch result{
+      case let .success(data):
+        // Your data available!
+                
+      case let .failure(error):
+                
+   }
+}
+
+```
+
 
 ### Author
 
