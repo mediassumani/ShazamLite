@@ -3,7 +3,7 @@
 </p>
 <p align="center">  A dynamically built, yet simple to use Networking Library for iOS.</p>
 
-[![HitCount](http://hits.dwyl.io/MediBoss/ShazamLite.svg)](http://hits.dwyl.io/MediBoss/ShazamLite)[![star this repo](http://githubbadges.com/star.svg?user=MediBoss&repo=ShazamLite&style=default)](https://github.com/MediBoss/ShazamLite)
+[![HitCount](http://hits.dwyl.io/MediBoss/ShazamLite.svg)](http://hits.dwyl.io/MediBoss/ShazamLite)
 [![star this repo](http://githubbadges.com/star.svg?user=MediBoss&repo=ShazamLite&style=default)](https://github.com/MediBoss/ShazamLite)
 [![fork this repo](http://githubbadges.com/fork.svg?user=MediBoss&repo=ShazamLite&style=default)](https://github.com/MediBoss/ShazamLite/fork)
 
