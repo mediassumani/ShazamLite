@@ -28,8 +28,8 @@ ShazamLite is an asynchronous, concurrent, and rapid Networking Library built in
 
 <b>NOTE</b>: ShazamLite only has two powerfull methods:
 
-  - * get : Use this for most requests when getting data from an API. 
-  - * set : Use this for when you're sending data to an API.
+    * get : Use this for requests when getting data from an API. 
+    * set : Use this for for requests when you're sending data to an API.
   
 * Your Model - make sure it conforms to the Codable protocol.
 
