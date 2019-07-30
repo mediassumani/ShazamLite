@@ -1,4 +1,6 @@
-# ShazamLite
+<p align="center">
+  <img width="460" height="300" src="ShazamLite_logo.png">
+</p>
 
 ### Overview
 ShazamLite is an asynchronous, concurrent, and rapid Networking Library built in Swift for iOS.
