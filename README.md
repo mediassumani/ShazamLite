@@ -1,7 +1,7 @@
-# Shazam
+# ShazamLite
 
 ### Overview
-Shazam is an asynchronous, concurrent, and rapid Networking Library built in Swift for iOS & MacOS.
+ShazamLite is an asynchronous, concurrent, and rapid Networking Library built in Swift for iOS & MacOS.
 
 ### Features
 
@@ -14,9 +14,15 @@ Shazam is an asynchronous, concurrent, and rapid Networking Library built in Swi
 
 ### Requirements
 
+- Swift 4.2
+
 ### Installation
+```
+      pod 'ShazamLite'
+ ```
 
 ### Quick start
+
 
 ### Author
 
@@ -24,4 +30,9 @@ Shazam is an asynchronous, concurrent, and rapid Networking Library built in Swi
 
 ### Built With
 
+* Swift 4.2
+* Xcode 10.2
+* Cocoapods 1.7.5
+
 ### License
+<b>ShazamLite</b> is an Open-sourced project and under the MIT license. See the <a href="https://github.com/MediBoss/ShazamLite/License.md">LICENSE</a> file for more info.
