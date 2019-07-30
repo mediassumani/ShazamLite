@@ -19,7 +19,9 @@ ShazamLite is an asynchronous, concurrent, and rapid Networking Library built in
 ### Installation
 * For iOS 10.2+ with <a href="https://cocoapods.org/">Cocoapods</a>:
 
-  ``` pod 'ShazamLite' ```
+  ```python
+    pod 'ShazamLite' 
+  ```
 
 ### Quick start
 
