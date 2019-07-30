@@ -6,16 +6,17 @@ ShazamLite is an asynchronous, concurrent, and rapid Networking Library built in
 ### Why use ShazamLite?
 
 * Absract complex URLSession functionalities from developers.
-* Configure model Encoding and Decoding from developers.
+* Configure model Encoding and Decoding for developers.
 * Provide support for all HTTP Request types (GET, POST, PUT, PATCH, DELETE).
 * Graceful handle of common HTTP errors.
 * Dynamic and custom construction of request.
 * Custom handle of server responses.
-* Less code and focus on networking layer, more focus on UI work.
 
 ### Requirements
 
-- Swift 4.2
+- Swift 4.2+
+- Xcode 10.2+
+- iOS 10.0
 
 ### Installation
 * For iOS 10.2+ with <a href="https://cocoapods.org/">Cocoapods</a>:
