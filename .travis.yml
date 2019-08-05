@@ -1,36 +1,4 @@
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-^G Get Help                 ^O WriteOut                 ^R Read File                ^Y Prev Page                ^K Cut Text                 ^C Cur Pos
-^X Exit                     ^J Justify                  ^W Where Is                 ^V Next Page                ^U UnCut Text               ^T To Spell
+language: objective-c
+xcode_project: ShazamLite.xcodeproj # path to your xcodeproj folder
+xcode_scheme: ShazamLiteTests
+xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone X
