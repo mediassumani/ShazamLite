@@ -6,7 +6,7 @@
 [![HitCount](http://hits.dwyl.io/MediBoss/ShazamLite.svg)](http://hits.dwyl.io/MediBoss/ShazamLite)
 [![star this repo](http://githubbadges.com/star.svg?user=MediBoss&repo=ShazamLite&style=default)](https://github.com/MediBoss/ShazamLite)
 [![fork this repo](http://githubbadges.com/fork.svg?user=MediBoss&repo=ShazamLite&style=default)](https://github.com/MediBoss/ShazamLite/fork)
-[![Build Status](https://travis-ci.com/MediBoss/ShazamLite?branch=master)](https://travis-ci.com/MediBoss/ShazamLite)
+[![Build Status](https://travis-ci.com/MediBoss/ShazamLite.svg?branch=master)](https://travis-ci.com/MediBoss/ShazamLite)
 
 ### Why use ShazamLite?
 
