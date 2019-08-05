@@ -3,4 +3,4 @@ language: swift
 before_install:
     - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
 script:
-  - xctool test -workspace ShazamLite.xcworkspace -scheme ShazamLiteTests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6' GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+  - xctool test -workspace ShazamLite.xcworkspace -scheme ShazamLiteTests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6'
