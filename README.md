@@ -50,7 +50,7 @@
 
 ```
 
-* Request for decoding JSON of type dictionary. See example  <a href="https://jsonplaceholder.typicode.com/todos">here</a>.
+* Request for decoding JSON of type dictionary. See example  <a href="https://jsonplaceholder.typicode.com/todos/1">here</a>.
 
 ``` Swift
 
@@ -74,7 +74,7 @@ downloader.get(parameters: nil, headers: nil) { (result: Result<Todo?, Error>) i
 
 
 ```
-* Request for decoding  JSON of type dictionary. See example  <a href="https://jsonplaceholder.typicode.com/todos/1">here</a>.
+* Request for decoding  JSON of type array. See example  <a href="https://jsonplaceholder.typicode.com/todos">here</a>.
 
 ``` Swift
 
