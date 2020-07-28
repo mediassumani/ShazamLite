@@ -5,7 +5,6 @@ cache:
   - cocoapods
   
 before_install:
-  - bundle install
   - pod install
 script:
   - xctool test -workspace ShazamLite.xcworkspace -scheme ShazamLite -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X'
