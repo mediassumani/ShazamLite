@@ -1,6 +1,11 @@
 language: swift
+osx_image: xcode11
+
+cache:
+  - cocoapods
   
 before_install:
-    - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+  - bundle install
+  - pod install
 script:
-  - xctool test -workspace ShazamLite.xcworkspace -scheme ShazamLiteTests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6'
+  - xctool test -workspace ShazamLite.xcworkspace -scheme ShazamLite -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X'
