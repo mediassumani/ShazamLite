@@ -122,7 +122,7 @@ downloader.set(parameters: nil, headers: nil, method: .post, body: encodedBody) 
 
 ### Developer
 
-* <a href="https://github.com/MediBoss">Medi Assumani</a> - Initial Work
+* <a href="https://github.com/MediBoss">Medi Assumani</a> - Founder & Lead Engineer
 
 ### Built With
 
